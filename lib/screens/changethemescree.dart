@@ -7,11 +7,8 @@ class ChangeTheme extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ThemeData myth = ThemeData(
-      colorScheme: ColorScheme.fromSeed(
-        seedColor: Colors.green,
-      ),
-    );
+    ThemeData lighttheme = ThemeData(brightness: Brightness.light);
+    ThemeData darktheme = ThemeData(brightness: Brightness.dark);
 
     return Scaffold(
       appBar: AppBar(
@@ -30,7 +27,7 @@ class ChangeTheme extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          context.read<ThemeProvider>().settheme(myth);
+          context.read<ThemeProvider>().settheme(lighttheme, darktheme);
         },
         child: Icon(Icons.brightness_medium_outlined),
       ),
